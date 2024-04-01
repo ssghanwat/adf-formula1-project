@@ -1,0 +1,13 @@
+{
+	"name": "ls_dataBricks_workspace_formula",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-8876421234914445.5.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/1b1dd66b-6e69-4c6d-bc9d-f436fb937550/resourceGroups/rg-databricks-workspace-dev/providers/Microsoft.Databricks/workspaces/DataBricks-WorkSpace",
+			"existingClusterId": "0320-053328-w87ng434"
+		}
+	}
+}
