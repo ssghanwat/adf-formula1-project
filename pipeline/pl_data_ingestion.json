@@ -1,0 +1,53 @@
+{
+	"name": "pl_data_ingestion",
+	"properties": {
+		"description": "this pipeline is used to ingest data from all files",
+		"activities": [
+			{
+				"name": "ingest data master file",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/0.ingest_all_files",
+					"baseParameters": {
+						"v_data_source": {
+							"value": "@variables('p_data_source')",
+							"type": "Expression"
+						},
+						"v_file_date": {
+							"value": "@formatDateTime(pipeline().parameters.p_window_end_date, 'yyy-MM-dd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_dataBricks_workspace_formula",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"p_window_end_date": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"p_data_source": {
+				"type": "String",
+				"defaultValue": "Ergast API"
+			}
+		},
+		"folder": {
+			"name": "data ingestion"
+		},
+		"annotations": []
+	}
+}
