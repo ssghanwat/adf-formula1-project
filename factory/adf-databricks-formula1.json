@@ -1,0 +1,9 @@
+{
+	"name": "adf-databricks-formula1",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "27d55ee1-444e-465a-94f3-725ef7698a12",
+		"tenantId": "15692ff5-dfa2-43b7-9b62-5bf18e278fae"
+	}
+}
