@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-databricks-formula1"
+		},
+		"ls_f1adlsgen2storage_accountKey": {
+			"value": ""
+		},
+		"ls_formula1_storage_accountKey": {
+			"value": ""
+		},
+		"ls_dataBricks_workspace_formula_properties_typeProperties_existingClusterId": {
+			"value": "0320-053328-w87ng434"
+		},
+		"ls_f1adlsgen2storage_properties_typeProperties_url": {
+			"value": "https://f1adlsgen2storage.dfs.core.windows.net/"
+		},
+		"ls_formula1_storage_properties_typeProperties_url": {
+			"value": "https://f1adlsgen2storage.dfs.core.windows.net/"
+		},
+		"ls_pitstops_properties_typeProperties_existingClusterId": {
+			"value": "0320-053328-w87ng434"
+		}
+	}
+}
