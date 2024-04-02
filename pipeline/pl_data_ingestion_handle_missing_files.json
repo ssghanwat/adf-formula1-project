@@ -56,36 +56,6 @@
 					},
 					"ifTrueActivities": [
 						{
-							"name": "pit_stops",
-							"type": "DatabricksNotebook",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/6.ingest_pit_stops_file",
-								"baseParameters": {
-									"p_data_source": {
-										"value": "@variables('v_data_source')",
-										"type": "Expression"
-									},
-									"p_file_date": {
-										"value": "@formatDateTime(pipeline().parameters.p_window_end_date,'yyy-MM-dd')",
-										"type": "Expression"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "ls_dataBricks_workspace_formula",
-								"type": "LinkedServiceReference"
-							}
-						},
-						{
 							"name": "ingestion circuits file",
 							"type": "DatabricksNotebook",
 							"dependsOn": [],
@@ -99,66 +69,6 @@
 							"userProperties": [],
 							"typeProperties": {
 								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/1.ingest_circuits_file",
-								"baseParameters": {
-									"p_data_source": {
-										"value": "@variables('v_data_source')",
-										"type": "Expression"
-									},
-									"p_file_date": {
-										"value": "@formatDateTime(pipeline().parameters.p_window_end_date,'yyy-MM-dd')",
-										"type": "Expression"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "ls_dataBricks_workspace_formula",
-								"type": "LinkedServiceReference"
-							}
-						},
-						{
-							"name": "ingestion races file",
-							"type": "DatabricksNotebook",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/2.ingest_races_file",
-								"baseParameters": {
-									"p_data_source": {
-										"value": "@variables('v_data_source')",
-										"type": "Expression"
-									},
-									"p_file_date": {
-										"value": "@formatDateTime(pipeline().parameters.p_window_end_date,'yyy-MM-dd')",
-										"type": "Expression"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "ls_dataBricks_workspace_formula",
-								"type": "LinkedServiceReference"
-							}
-						},
-						{
-							"name": "ingestion contructors file",
-							"type": "DatabricksNotebook",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/3.ingest_constructors_file",
 								"baseParameters": {
 									"p_data_source": {
 										"value": "@variables('v_data_source')",
@@ -279,6 +189,96 @@
 							"userProperties": [],
 							"typeProperties": {
 								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/8.ingest_qualifying_file",
+								"baseParameters": {
+									"p_data_source": {
+										"value": "@variables('v_data_source')",
+										"type": "Expression"
+									},
+									"p_file_date": {
+										"value": "@formatDateTime(pipeline().parameters.p_window_end_date,'yyy-MM-dd')",
+										"type": "Expression"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_dataBricks_workspace_formula",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "ingestion races file",
+							"type": "DatabricksNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/2.ingest_races_file",
+								"baseParameters": {
+									"p_data_source": {
+										"value": "@variables('v_data_source')",
+										"type": "Expression"
+									},
+									"p_file_date": {
+										"value": "@formatDateTime(pipeline().parameters.p_window_end_date,'yyy-MM-dd')",
+										"type": "Expression"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_dataBricks_workspace_formula",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "ingestion constructors file",
+							"type": "DatabricksNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/3.ingest_constructors_file",
+								"baseParameters": {
+									"p_data_source": {
+										"value": "@variables('v_data_source')",
+										"type": "Expression"
+									},
+									"p_file_date": {
+										"value": "@formatDateTime(pipeline().parameters.p_window_end_date,'yyy-MM-dd')",
+										"type": "Expression"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_dataBricks_workspace_formula",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "ingestion pit_stops file",
+							"type": "DatabricksNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Users/kalukherushabh99999@gmail.com/Databricks-course/formula-1/ingestion/6.ingest_pit_stops_file",
 								"baseParameters": {
 									"p_data_source": {
 										"value": "@variables('v_data_source')",
