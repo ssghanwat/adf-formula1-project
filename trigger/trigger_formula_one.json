@@ -2,7 +2,7 @@
 	"name": "trigger_formula_one",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "pl_proccess_formula_data",
