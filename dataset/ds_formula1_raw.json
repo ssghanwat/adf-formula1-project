@@ -1,0 +1,26 @@
+{
+	"name": "ds_formula1_raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_formula1_storage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_window_end_date": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@formatDateTime(dataset().p_window_end_date, 'yyy-MM-dd')",
+					"type": "Expression"
+				},
+				"fileSystem": "raw"
+			}
+		}
+	}
+}
