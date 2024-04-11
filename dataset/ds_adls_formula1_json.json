@@ -1,0 +1,27 @@
+{
+	"name": "ds_adls_formula1_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_formula1_storage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"file_path": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('bronze/seasons/', string(utcNow('yyyyMMdd')))",
+					"type": "Expression"
+				},
+				"fileSystem": "formula-1"
+			}
+		},
+		"schema": {}
+	}
+}
